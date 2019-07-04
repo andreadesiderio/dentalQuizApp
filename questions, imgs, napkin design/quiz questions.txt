@@ -1,0 +1,59 @@
+1. what are teeth in the back of the mouth called?
+	1.anterior
+	2.posterior
+	3.distal
+	4.lingual
+
+2. what are teeth in the fron of the mouth called?
+	1.anterior
+	2.posterior
+	3.mesial
+	4.buccal
+
+3. how many teeth are in a full set of premanent (adult) teeth
+	1. 20
+	2. 32
+	3. 46
+	4. 16
+
+4. how many teeth are in a full set of primary (child) teeth
+	1. 20
+	2. 32
+	3. 10
+	4. 16
+
+5. what is the upper jaw's arch called?
+	1. maxillary arch
+	2. mandibular arch
+	3. cat's arch
+	4. dental arch
+
+6. what is the lower jaw's arch called?
+	1. maxillary arch
+	2. mandibular arch
+	3. gateway arch
+	4. dentition arch 
+
+7. primary teeth are identified from one another by what method?
+	1. by roman numeral numbers
+	2. by letters of the alphabet
+	3. by numbers
+	4. by negative numbers
+
+8. permanent teeth are identified from one another by what method?
+	1. by roman numeral numbers
+	2. by letters of the alphabet
+	3. by numbers
+	4. by negative numbers
+
+9. what are the dental surfaces for posterior teeth?
+	1. mesial, lingual, occlussal, distal, buccal
+	2. front, back, right, left, top
+	3. posterior, anterior, inside, outside
+	4. surface1, surface2, surface3, surface4, surface5
+
+10. what are the dental surfaces for anterior teeth?
+	1. mesial, lingual, incisal, distal, facial
+	2. front, back, right, left, top
+	3. posterior, anterior, inside, outside
+	4. surface1, surface2, surface3, surface4, surface5
