@@ -6,35 +6,34 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dental Quiz App | Question Page</title>
 
-    <link href="styles/normalise.css"  rel="stylesheet"  type="text/css">
-    <link href="styles/main.css"  rel="stylesheet"  type="text/css"> 
+    <link href='/assets/styles/normalise.css'  rel="stylesheet">
+    <link href="/assets/styles/main.css"  rel="stylesheet"> 
 </head>
 <body>
     <header>
-     <div class="pageNumber">Page Number</div> <div class="currentScore">Current Score</div>
-     <h2 class="heading">Question Number</h2>
+     <div class="pageNumber js-pageNumber">Page Number</div> <div class="currentScore js-currentScore">Current Score</div>
+     <h2 class="heading js-heading">Question Number</h2>
     </header>
     <main>
         <div class="messageContainer">
-          <p class="question">question</p>
+          <p class="question js-question">question</p>
         </div>
         <div class="answers">
-            <form>
-                <label class="answerChoice"><input type="radio" name="anwserChoice" id="answer1" value="Answer1"><span>Answer1</span></label>
-                <label class="answerChoice"><input type="radio" name="anwserChoice" id="answer1" value="Answer2"><span>Answer2</span></label>
-                <label class="answerChoice"><input type="radio" name="anwserChoice" id="answer1" value="Answer3"><span>Answer3</span></label>
-                <label class="answerChoice"><input type="radio" name="anwserChoice" id="answer1" value="Answer4"><span>Answer4</span></label>
-                <div class="buttonContainer"> 
+            <form id='form'>
+                <!-- <div class="buttonContainer"> 
                 <button>Submit</button>
-                </div>
+                </div> -->
             </form>
         </div>
-    <div class="messageContainer">
-        <p class="feedBack">feedback/ this will initially be visibiliy: hidden</p>
-        <div class="buttonContainer"> 
-        <a href="resultPage.html"><button>next/ this links to the final result page</button></a>
+    <div class="messageContainer js-messageContainer hidden">
+        <p class="feedback js-feedback">feedback/ this will initially be visibiliy: hidden</p>
+        <div class="buttonContainerNextPage"> 
+        <button class="js-nextPageButton">next</button>
         </div>
     </div>
     </main>
+
+    <script type="text/javascript" src='/assets/js/jquery-3.3.1.min.js'></script>     
+ <script type="text/javascript" src="/assets/js/index.js"></script>   
 </body>
 </html>

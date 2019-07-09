@@ -43,6 +43,14 @@ right: 0;
     background: darkgray;
 }
 
+label{
+    display: block;
+    height: 70px;
+    line-height: 70px;
+    border: 1px solid black;
+    background: lightgray;
+}
+
 .messageContainer{
     height: 100px;
     line-height: 100px;
@@ -51,10 +59,6 @@ right: 0;
     background: darkgray;
 }
 
-.answerChoice{
-    display: block;
-    height: 70px;
-    line-height: 70px;
-    border: 1px solid black;
-    background: lightgray;
+.hidden{
+    visibility: hidden;
 }
