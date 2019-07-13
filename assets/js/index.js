@@ -82,7 +82,7 @@ const questions = [
         ]
     },
     {    
-        question:'What are the surface names for anterior teeth?',
+        question:'What are the surface names for posterior teeth?',
         answerChoices:[
             {answer: 'front, back, right, left, top', correct: false},
             {answer: 'surface1, surface2, surface3, surface6, surface7', correct: false},
@@ -91,22 +91,24 @@ const questions = [
         ]
     }                                               
 ];
-
+localStorage.removeItem('score');
 let questionNumber = 0;
 let score = 0;
 let possibleAnswers = [];
+
 
 function renderQuestionNumber(){
     $('.js-pageNumber').html(`Question: ${questionNumber + 1} / 10`);
     $('.js-heading').html(`Question ${questionNumber + 1}`);
 }
 
-function renderCurrentScore(){
-    $('.js-currentScore').html(`Score: ${score} / 10`);
-}
-
 function renderQuestion(){
     $('.js-question').html(questions[questionNumber].question);
+}
+
+    function renderCurrentScore(){
+    // $('.js-currentScore').html(`Score: ${score} / 10`);
+    $('.js-currentScore').html(`Score: ${score} / 10`);
 }
 
 function renderAnswerChoices(){
@@ -160,11 +162,15 @@ function provideFeedBack(correctAnswer, val){
      
 
 function sayItsCorrect(val){
-    score ++;
     questionNumber ++;
     $('.js-feedback').html(`Your Answer: "${val}" is Correct!`);
+   score ++;
+   localStorage.setItem('score', score);
     checkQuestionNumber();
 }
+
+
+
 
 function sayItsWrong(val){
     questionNumber ++;
@@ -173,7 +179,14 @@ function sayItsWrong(val){
 }
 
 function checkQuestionNumber(){
-    questionNumber < 10 ? $('.js-nextPageButton').on('click', renderNextQuestion) : $('.js-nextPageButton').on('click', goToFinalPage);
+    if (questionNumber < 10 ){
+         $('.js-nextPageButton').on('click', renderNextQuestion)
+        }
+         else{
+            $('.js-nextPageButton').off('click');
+             $('.buttonContainerNextPage').html('<a class="finalButton" href="resultPage.html"><button>Final Score</buttn></a>');
+            //  $('.finalButton').on('click', renderFinalPage);
+        }
 }
 
 function renderNextQuestion(){
@@ -183,11 +196,7 @@ function renderNextQuestion(){
     handleQuestionPage ();
 }
 
-function goToFinalPage(){
-    $('.buttonContainerNextPage').html('<a href="resultPage.html"><button>Final Score</buttn></a>');
-}
-
-function handleQuestionPage (){
+function handleQuestionPage(){
     renderQuestionNumber();
     renderCurrentScore();
     renderQuestion();
