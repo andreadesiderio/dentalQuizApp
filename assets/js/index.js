@@ -91,7 +91,7 @@ const questions = [
         ]
     }                                               
 ];
-localStorage.removeItem('score');
+// localStorage.removeItem('score');
 let questionNumber = 0;
 let score = 0;
 let possibleAnswers = [];
@@ -107,7 +107,6 @@ function renderQuestion(){
 }
 
     function renderCurrentScore(){
-    // $('.js-currentScore').html(`Score: ${score} / 10`);
     $('.js-currentScore').html(`Score: ${score} / 10`);
 }
 
@@ -185,7 +184,6 @@ function checkQuestionNumber(){
          else{
             $('.js-nextPageButton').off('click');
              $('.buttonContainerNextPage').html('<a class="finalButton" href="resultPage.html"><button>Final Score</buttn></a>');
-            //  $('.finalButton').on('click', renderFinalPage);
         }
 }
 

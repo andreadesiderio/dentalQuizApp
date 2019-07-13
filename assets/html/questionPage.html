@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dental Quiz App | Question Page</title>
+
+    <link href='/assets/styles/normalise.css'  rel="stylesheet">
+    <link href="/assets/styles/main.css"  rel="stylesheet"> 
+</head>
+<body>
+    <header>
+     <div class="pageNumber js-pageNumber">Page Number</div> <div class="currentScore js-currentScore">Current Score</div>
+     <h2 class="heading js-heading">Question Number</h2>
+    </header>
+    <main>
+        <div class="messageContainer">
+          <p class="question js-question">question</p>
+        </div>
+        <div class="answers">
+            <form id='form'>
+
+            </form>
+        </div>
+    <div class="messageContainer js-messageContainer hidden">
+        <p class="feedback js-feedback">feedback/ this will initially be visibiliy: hidden</p>
+        <div class="buttonContainerNextPage"> 
+        <button class="js-nextPageButton">next</button>
+        </div>
+    </div>
+    </main>
+
+    <script type="text/javascript" src='/assets/js/jquery-3.3.1.min.js'></script>     
+    <script type="text/javascript" src="/assets/js/index.js"></script>   
+</body>
+</html>
