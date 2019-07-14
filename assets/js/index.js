@@ -113,8 +113,8 @@ function renderQuestion(){
 function renderAnswerChoices(){
      for (let i = 0; i < questions[questionNumber].answerChoices.length; i ++){
          let value = questions[questionNumber].answerChoices[i].answer;
-         let answerChoice = `<label><input class="answerChoice" type="radio" name="anwserChoice" value="${value}" required><span>${value}</span></label>`;
-         possibleAnswers.push(answerChoice);
+         let answerChoice = `<div><label aria-pressed="false"><input class="answerChoice" type="radio" name="anwserChoice" value="${value}" required><span>${value}</span></label></div>`;
+         possibleAnswers.push(answerChoice); 
      }
      return possibleAnswers.sort((a,b) => 0.5 - Math.random());
 }
@@ -183,7 +183,7 @@ function checkQuestionNumber(){
         }
          else{
             $('.js-nextPageButton').off('click');
-             $('.buttonContainerNextPage').html('<a class="finalButton" href="resultPage.html"><button>Final Score</buttn></a>');
+             $('.buttonContainerNextPage').html('<a class="finalButton" href="resultPage.html"><button>Final Score</button></a>');
         }
 }
 
