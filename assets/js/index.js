@@ -113,7 +113,7 @@ function renderQuestion(){
 function renderAnswerChoices(){
      for (let i = 0; i < questions[questionNumber].answerChoices.length; i ++){
          let value = questions[questionNumber].answerChoices[i].answer;
-         let answerChoice = `<div><label aria-pressed="false"><input class="answerChoice" type="radio" name="anwserChoice" value="${value}" required><span>${value}</span></label></div>`;
+         let answerChoice = `<label aria-pressed="false"><input class="answerChoice" type="radio" name="anwserChoice" value="${value}" required><span>${value}</span></label>`;
          possibleAnswers.push(answerChoice); 
      }
      return possibleAnswers.sort((a,b) => 0.5 - Math.random());
@@ -122,7 +122,7 @@ function renderAnswerChoices(){
 function renderAnswers(){
     $('#form').append(renderAnswerChoices());
     $('#form').append(`<div class="buttonContainer"> 
-    <button>Submit</button></div>`);
+    <button class="submitButton">Submit</button></div>`);
     handleFormSubmit();   
 }
 

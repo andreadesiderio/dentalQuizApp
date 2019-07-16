@@ -1,0 +1,105 @@
+/* rgb(173,163,161) floor board light*/
+/* rgb(98,78,71)  floor board dark*/
+
+body {
+    background: rgb(42, 38, 37) url(../images/insideDentalOffice.jpg) no-repeat 0 90px;
+    background-size: cover;
+}
+
+header{
+    margin-top: 20px;
+}
+.pageNumber, .currentScore{
+    width: 40%;
+    display: inline-block;
+    text-align : center;
+    color: rgb(194, 208, 221);
+    }
+
+.currentScore{
+    position: absolute;
+    right: 0;
+}
+
+.questionHeading{
+    text-align: center;
+}
+
+.quizMain{
+    position: absolute;
+    top: 60px;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+.question{
+    text-align: center;
+    height: 35px;
+    padding-top: 5px;
+    margin-bottom: 10px;
+    font-size: 25px;
+    background: rgb(194, 208, 221);
+    width: 100%;
+}
+
+ /* .answers{
+    padding-top:5px;
+}  */
+
+label{
+    display: block;
+    /* border: 1px solid black; */
+    height: 35px;
+    line-height: 30px;
+    width: 95%;
+    /* margin-bottom: 10px; */
+    margin: 15px auto;
+    font-size: 20px;
+    color: white;
+    text-shadow:
+    -1px -1px 0 #44556f,
+    1px -1px 0 #44556f,
+    -1px 1px 0 #44556f,
+    1px 1px 0 #44556f,
+     -5px -5px 10px rgba(68, 85, 111, .5),
+    5px -5px 10px rgba(68, 85, 111, .5),
+    5px 5px 10px rgba(68, 85, 111, .5),
+   -5px 5px 10px rgba(68, 85, 111, .5);
+}
+
+label:first-of-type{
+    background: rgba(98, 78, 71, 0.7); 
+    /* background: rgba(131, 74, 60, 0.7); */
+    /* color:rgb(194, 208, 221); */
+}
+
+label:nth-of-type(2){
+    background: rgba(131, 74, 60, 0.6);
+    /* background: rgba(98, 78, 71, 0.6);  */
+    /* color:rgb(194, 208, 221); */
+}
+
+label:nth-of-type(3){
+    background: rgba(173, 163, 161, 0.7); 
+    /* color:rgb(194, 208, 221); */
+}
+
+label:last-of-type{
+    background: rgba(194, 208, 221, 0.8);
+}
+
+.submitButton{
+    width: 100%;
+    /* position: relative;
+    top: 20px; */
+}
+
+
+.messageContainer{
+    text-align: center;
+}
+
+.hidden{
+    visibility: hidden;
+}

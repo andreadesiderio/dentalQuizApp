@@ -1,10 +1,12 @@
 *{
     box-sizing: border-box;
 }
-
-
+/* 
+rgb(22,50,54)
+rgb(81, 23, 35) */
+/* rgb(0, 51, 0) */
  body{
-  background: rgb(0, 51, 0) url(../images/outsideDentalOffice3.jpg)  no-repeat 5px 60px ; 
+  background: rgb(22,50,54) url(../images/outsideDentalOffice3.jpg)  no-repeat 5px 60px ; 
   background-size: cover; 
 } 
 h1{
@@ -14,8 +16,7 @@ h1{
     text-align: center;
 }
 
-
-.buttonContainer{
+.buttonContainer .startButton{
     position: absolute;
     top: 60%;
     left: 0;
@@ -25,48 +26,22 @@ h1{
     text-align: center;
 }
 
-button{
+.startButton{
  width: 50%;
  background-color: rgba(254, 227, 193, .9);
- border: 3px solid darkred;
+ border: 3px solid rgb(81, 23, 35);
 height: 40px;
 font-size: 20px;
 box-shadow: -5px 10px 20px 5px;
 } 
 /* 
-.pageNumber, .currentScore{
-width: 30%;
-display: inline-block;
-border: 1px solid black;
-text-align : center;
-}
-
-.currentScore{
-position: absolute;
-right: 0;
-}
 
 .heading{
     text-align: center;
     background: darkgray;
 }
 
-label{
-    display: block;
-    height: 70px;
-    line-height: 70px;
-    border: 1px solid black;
-    background: lightgray;
-}
 
-.messageContainer{
-    height: 200px;
-    line-height: 200px;
-    border: 1px solid black;
-    text-align: center;
-    background: darkgray;
-}
 
-.hidden{
-    visibility: hidden;
+
 } */
