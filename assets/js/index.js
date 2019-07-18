@@ -156,13 +156,13 @@ function provideFeedBack(correctAnswer, val){
     //add image
     $('.js-messageContainer').toggleClass('hidden');
     correctAnswer == val ?
-    sayItsCorrect(val)  : sayItsWrong(val);
+    sayItsCorrect(val)  : sayItsWrong(val, correctAnswer);
     }
      
 
 function sayItsCorrect(val){
     questionNumber ++;
-    $('.js-feedback').html(`Your Answer: "${val}" is Correct!`);
+    $('.js-feedback').html(`Your Answer: <span class= "correctAnswer"> "${val}" </span> is Correct!`);
    score ++;
    localStorage.setItem('score', score);
     checkQuestionNumber();
@@ -171,9 +171,9 @@ function sayItsCorrect(val){
 
 
 
-function sayItsWrong(val){
+function sayItsWrong(val, correctAnswer){
     questionNumber ++;
-    $('.js-feedback').html(`Your Answer: "${val}" is Wrong!`);
+    $('.js-feedback').html(`Your Answer: <span class="wrongAnswer"> "${val}" </span> is Wrong! <br> The correct answer is <span class="correctAnswer"> "${correctAnswer}" </span>.`);
     checkQuestionNumber();
 }
 

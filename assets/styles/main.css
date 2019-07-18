@@ -18,7 +18,7 @@ h1{
 
 .buttonContainer .startButton{
     position: absolute;
-    top: 60%;
+    top: 25%;
     left: 0;
     right: 0;
     bottom: 0;
@@ -34,14 +34,4 @@ height: 40px;
 font-size: 20px;
 box-shadow: -5px 10px 20px 5px;
 } 
-/* 
 
-.heading{
-    text-align: center;
-    background: darkgray;
-}
-
-
-
-
-} */
