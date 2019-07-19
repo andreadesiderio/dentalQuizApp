@@ -12,7 +12,7 @@ body {
 
 header{
     background:  rgb(42, 38, 37);
-    padding: 20px 0 10px 0;
+    padding: 20px 0;
 }
 
 .pageNumber, .currentScore{
@@ -47,8 +47,17 @@ header{
     width: 100%;
 }
 
-label{
+form{
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 70vh;
+    padding-top: 5px;
+}
+
+label{
+    display: block;
     line-height: 30px;
     padding: 10px 0;
     font-size: 20px;
@@ -63,7 +72,6 @@ label{
     5px 5px 10px rgba(68, 85, 111, .5),
    -5px 5px 10px rgba(68, 85, 111, .5);
    background: none;
-   /* transition: background 1s; */
 }
 
 
@@ -71,21 +79,17 @@ label:hover, label:focus{
         background: rgba(42, 38, 37, .5);
 }
 
-
-input{
-    position: relative;
-     top: 5px; 
- }
-
- label:first-of-type{ 
-     margin-top: 5px;
-  } 
-
 .submitButton{
     width: 100%;
-    margin-top: 5px; 
+    padding: 5px;
+    font-size: 20px;
+    border: 1px solid black;
  }
  
+.submitButton:hover{
+    box-shadow: -5px 10px 20px 5px;
+}
+
  .hidden{
     visibility: hidden;
 }
@@ -94,10 +98,15 @@ input{
     text-align: center;
     background: rgba(42, 38, 37, .8);
     padding-top: 10px;
+    position: absolute;
+    top: 20%;
+    left:0;
+    right: 0;
     width: 90%;
     margin: auto;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+    box-shadow: -5px 10px 20px 5px rgb(42, 38, 37);
     color:white;
     line-height: 20px;
 }
@@ -118,5 +127,22 @@ input{
 
 .buttonContainerNextPage button{
     width: 100%;
+    border: 1px solid black;
+}
+
+@media screen and (min-width:600px){
+    .answers{
+        width: 90%;
+        margin: auto;
+    }
+    .feedbackContainer{
+        line-height: 30px;
+        font-size: 25px;
+    }
+    .buttonContainerNextPage button{
+        padding: 5px;
+    font-size: 20px;
+    }
+
 }
 

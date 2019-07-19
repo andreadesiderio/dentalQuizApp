@@ -1,32 +1,29 @@
 *{
     box-sizing: border-box;
 }
-/* 
-rgb(22,50,54)
-rgb(81, 23, 35) */
-/* rgb(0, 51, 0) */
+
  body{
-  background: rgb(22,50,54) url(../images/outsideDentalOffice3.jpg)  no-repeat 5px 60px ; 
+  background: rgb(22,50,54) url(../images/outsideDentalOffice3.jpg) 5px 60px no-repeat ; 
   background-size: cover; 
 } 
 h1{
     padding-top: 10px;
-    color: white;
+    color: white; 
     font-size: 25px;
     text-align: center;
 }
 
-.buttonContainer .startButton{
-    position: absolute;
+.buttonContainer .startButton, .buttonContainer .tryAgainButton{
+    position: absolute; 
     top: 25%;
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: 0; 
     margin: auto;
     text-align: center;
 }
 
-.startButton{
+.startButton, .tryAgainButton{
  width: 50%;
  background-color: rgba(254, 227, 193, .9);
  border: 3px solid rgb(81, 23, 35);
@@ -35,3 +32,29 @@ font-size: 20px;
 box-shadow: -5px 10px 20px 5px;
 } 
 
+.finalMessageContainer{
+    position: absolute;
+    top: 20%;
+    left:0;
+    right: 0;
+    text-align: center;
+    background-attachment: fixed;
+    background: rgba(42, 38, 37, .8); 
+    font-weight: bold;
+    padding: 10px;
+    color:white; 
+    line-height: 30px;
+    font-size: 20px;
+    border: 1px solid rgb(254, 227, 193);
+}
+
+@media screen and (min-width: 600px){
+    .finalMessageContainer{
+        font-size: 25px;
+    }
+    .startButton, .tryAgainButton{
+        font-size: 25px;
+        padding: 5px;
+        height: 50px;
+    }
+}
