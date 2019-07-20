@@ -20,6 +20,12 @@ h1{
     background: rgb(22,50,54);
 }
 
+a:active{
+    text-decoration: none;
+    color: none;
+    border: none;
+}
+
 button, label{
     cursor: pointer;
 }
@@ -96,6 +102,9 @@ box-shadow: -5px 10px 20px 5px;
      body{
     background: rgb(22,50,54) url(../images/outsideDentalOffice3.jpg) 50% 60px no-repeat ; 
     background-size: 80%;
+    }
+    h1{
+        font-size: 30px;
     }
 }
 

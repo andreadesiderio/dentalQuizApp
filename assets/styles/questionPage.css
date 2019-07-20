@@ -91,7 +91,8 @@ label:hover, label:focus{
  
 .submitButton:hover{
     background: black;
-    color: rgb(89,115,172);
+    color: rgb(160,194,232);
+    border: 2px solid rgb(160,194,232);
 }
 
  .hidden{
@@ -132,7 +133,7 @@ label:hover, label:focus{
 .buttonContainerNextPage button{
     width: 100%;
     border: 1px solid black;
-    transition: all 0.3s ease-in;
+    /* transition: all 0.3s ease-in; */
 }
 
 .buttonContainerNextPage button:hover{
@@ -159,6 +160,12 @@ label:hover, label:focus{
     label{
         font-size: 25px;
     }
+
+    
+    input:checked {
+        border: 8px solid black;
+    }
+
 
     .feedbackContainer{
         line-height: 30px;
