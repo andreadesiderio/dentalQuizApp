@@ -67,11 +67,12 @@ label{
     1px -1px 0 #44556f,
     -1px 1px 0 #44556f,
     1px 1px 0 #44556f,
-     -5px -5px 10px rgba(68, 85, 111, .5),
+    -5px -5px 10px rgba(68, 85, 111, .5),
     5px -5px 10px rgba(68, 85, 111, .5),
     5px 5px 10px rgba(68, 85, 111, .5),
    -5px 5px 10px rgba(68, 85, 111, .5);
    background: none;
+   transition: all 0.3s ease-out;
 }
 
 
@@ -84,10 +85,13 @@ label:hover, label:focus{
     padding: 5px;
     font-size: 20px;
     border: 1px solid black;
+    box-shadow: -5px 10px 20px 5px rgb(42, 38, 37);
+    transition: all 0.3s ease-out;
  }
  
 .submitButton:hover{
-    box-shadow: -5px 10px 20px 5px;
+    background: black;
+    color: rgb(89,115,172);
 }
 
  .hidden{
@@ -128,20 +132,41 @@ label:hover, label:focus{
 .buttonContainerNextPage button{
     width: 100%;
     border: 1px solid black;
+    transition: all 0.3s ease-in;
 }
 
+.buttonContainerNextPage button:hover{
+    background: rgb(89,115,172);
+    border: 3px solid rgb(89,115,172);
+}
+
+
 @media screen and (min-width:600px){
+    header{
+        font-size: 20px;
+    }
+    .quizMain{
+        top: 60px;
+    }
+    .questionContainer{
+        padding: 10px 0;
+        font-size: 25px;
+    }
     .answers{
         width: 90%;
         margin: auto;
     }
+    label{
+        font-size: 25px;
+    }
+
     .feedbackContainer{
         line-height: 30px;
         font-size: 25px;
     }
-    .buttonContainerNextPage button{
+        button{
         padding: 5px;
-    font-size: 20px;
+        font-size: 20px;
     }
 
 }
