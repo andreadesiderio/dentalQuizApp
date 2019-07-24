@@ -1,5 +1,3 @@
-/* rgb(173,163,161) floor board light*/
-/* rgb(98,78,71)  floor board dark*/
 
 *{
     box-sizing: border-box;
@@ -31,7 +29,7 @@ header{
     text-align: center;
 }
 
-.quizMain{
+main{
     position: absolute;
     top: 40px;
     right: 0;
@@ -39,7 +37,15 @@ header{
     margin: auto;
 }
 
-.questionContainer{
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 70vh;
+    padding-top: 5px;
+}
+
+.questionContainer, .resultHeading{
     text-align: center;
     padding: 5px 0;
     font-size: 25px;
@@ -47,17 +53,8 @@ header{
     width: 100%;
 }
 
-form{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: space-around;
-    height: 70vh;
-    padding-top: 5px;
-}
 
 label{
-    display: block;
     line-height: 30px;
     padding: 10px 0;
     font-size: 20px;
@@ -76,8 +73,8 @@ label{
 }
 
 
-label:hover, label:focus{
-        background: rgba(42, 38, 37, .5);
+label:hover, label:focus{ 
+    background: rgba(42, 38, 37, .5);
 }
 
 .submitButton{
@@ -99,7 +96,7 @@ label:hover, label:focus{
     visibility: hidden;
 }
 
-.feedbackContainer{
+.messageContainer{
     text-align: center;
     background: rgba(42, 38, 37, .8);
     padding-top: 10px;
@@ -126,17 +123,16 @@ label:hover, label:focus{
     font-weight: bold;
 }
 
-.buttonContainerNextPage{
+.buttonContainerNext{
     padding-top: 10px;
 }
 
-.buttonContainerNextPage button{
+.buttonContainerNext button{
     width: 100%;
     border: 1px solid black;
-    /* transition: all 0.3s ease-in; */
 }
 
-.buttonContainerNextPage button:hover{
+.buttonContainerNext button:hover{
     background: rgb(89,115,172);
     border: 3px solid rgb(89,115,172);
 }
@@ -146,14 +142,14 @@ label:hover, label:focus{
     header{
         font-size: 20px;
     }
-    .quizMain{
+    main{
         top: 60px;
     }
-    .questionContainer{
+    .questionContainer, .resultHeading{
         padding: 10px 0;
         font-size: 25px;
     }
-    .answers{
+    .formContainer{
         width: 90%;
         margin: auto;
     }
@@ -161,13 +157,11 @@ label:hover, label:focus{
         font-size: 25px;
     }
 
-    
     input:checked {
         border: 8px solid black;
     }
 
-
-    .feedbackContainer{
+    .messageContainer{
         line-height: 30px;
         font-size: 25px;
     }

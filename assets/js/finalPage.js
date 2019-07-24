@@ -2,11 +2,11 @@
 
 score = localStorage.getItem('score');
 
-function renderFinalScore(){
-     $('h1').html(`Final Score : ${score}/10`);
-     checkScore(score);
- }
-
+function renderResult(){
+$('main').prepend(`<h1>Final Score : ${score}/10<h1>`);
+checkScore(score);
+}
+    
 function checkScore(score){
         let message;
         let secondMessage;
@@ -34,9 +34,9 @@ function renderFinalMesage(message, secondMessage){
     $('#promptMessage').html(secondMessage);
 }
 
-function renderFinalPage(){
-    renderFinalScore();
-}
+// function renderFinalPage(){
+//     renderFinalScore();
+// }
 
 
- $(renderFinalPage);
+//  $(renderFinalPage);

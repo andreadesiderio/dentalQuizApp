@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 
- body{
+ .heroImg{
   background: rgb(22,50,54) url(../images/outsideDentalOffice3.jpg) 5px 60px no-repeat ; 
   background-size: cover;
   overflow: scroll;
@@ -13,7 +13,7 @@ header{
     padding: 10px 0;
 }
 
-h1{
+.heroHeading{
     color: white; 
     font-size: 25px;
     text-align: center;

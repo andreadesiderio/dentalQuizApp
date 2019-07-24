@@ -99,31 +99,35 @@ let possibleAnswers = [];
 
 function renderQuestionNumber(){
     $('.js-pageNumber').html(`Question: ${questionNumber + 1} / 10`);
-    $('.js-heading').html(`Question ${questionNumber + 1}`);
 }
 
-function renderQuestion(){
-    $('.js-question').html(questions[questionNumber].question);
-}
-
-    function renderCurrentScore(){
+function renderCurrentScore(){
     $('.js-currentScore').html(`Score: ${score} / 10`);
 }
 
 function renderAnswerChoices(){
      for (let i = 0; i < questions[questionNumber].answerChoices.length; i ++){
-         let value = questions[questionNumber].answerChoices[i].answer;
-         let answerChoice = `<label aria-pressed="false"><input class="answerChoice" type="radio" name="anwserChoice" value="${value}" required><span>${value}</span></label>`;
-         possibleAnswers.push(answerChoice); 
+         let choice = questions[questionNumber].answerChoices[i].answer;
+         possibleAnswers.push(choice); 
      }
-     return possibleAnswers.sort((a,b) => 0.5 - Math.random());
+    return possibleAnswers.sort((a,b) => 0.5 - Math.random());
 }
 
-function renderAnswers(){
-    $('#form').append(renderAnswerChoices());
-    $('#form').append(`<div class="buttonContainer"> 
-    <button class="submitButton">Submit</button></div>`);
-    handleFormSubmit();   
+function renderForm(){
+    let choices = renderAnswerChoices();
+    $('.formContainer').html(`
+    <form>
+    <legend class="questionContainer">
+    ${questions[questionNumber].question}
+    </legend>
+    <label for="input1"><input class="answerChoice" id="input1" type="radio" name="anwserChoice" value="${choices[0]}" required>${choices[0]}</label>
+    <label for="input2"><input class="answerChoice" id="input2" type="radio" name="anwserChoice" value="${choices[1]}" required>${choices[1]}</label>
+    <label for="input3"><input class="answerChoice" id="input3" type="radio" name="anwserChoice" value="${choices[2]}" required>${choices[2]}</label>
+    <label for="input4"><input class="answerChoice" id="input4" type="radio" name="anwserChoice" value="${choices[3]}" required>${choices[3]}</label>
+    <button class="submitButton">Submit</button>
+    </form>
+    `);
+    handleFormSubmit();
 }
 
 function retrieveValue(){
@@ -136,69 +140,101 @@ function retrieveValue(){
 }
 
 function handleFormSubmit(){
-    $('#form').on('submit', function (event){
+    $('form').on('submit', function (event){
         event.preventDefault();
-        let val = retrieveValue();
-        checkIfTrue(val);
-        $('#form').off('submit');
-        $('#form').empty();
+        let chosen = retrieveValue();
+        checkIfTrue(chosen);
+        $('form').off('submit');
+        $('form').empty();
     })
 }
 
-function checkIfTrue(val){
+function checkIfTrue(chosen){
     let correct = questions[questionNumber].answerChoices.find(item => item.correct == true);
     let correctAnswer = correct.answer;
-    provideFeedBack(correctAnswer, val);
+    provideFeedBack(correctAnswer, chosen);
 
 }
 
-function provideFeedBack(correctAnswer, val){
+function provideFeedBack(correctAnswer, chosen){
     //add image
     $('.js-messageContainer').toggleClass('hidden');
-    correctAnswer == val ?
-    sayItsCorrect(val)  : sayItsWrong(val, correctAnswer);
+    correctAnswer == chosen ?
+     sayItsCorrect(chosen)  : sayItsWrong(chosen, correctAnswer);
     }
      
 
-function sayItsCorrect(val){
+function sayItsCorrect(chosen){
     questionNumber ++;
-    $('.js-feedback').html(`Your Answer: <span class= "correctAnswer"> "${val}" </span> is Correct!`);
+    $('.js-feedback').html(`Your Answer: <span class= "correctAnswer"> "${chosen}" </span> is Correct!`);
    score ++;
-   localStorage.setItem('score', score);
+//    localStorage.setItem('score', score);
     checkQuestionNumber();
 }
 
-
-
-
-function sayItsWrong(val, correctAnswer){
+function sayItsWrong(chosen, correctAnswer){
     questionNumber ++;
-    $('.js-feedback').html(`Your Answer: <span class="wrongAnswer"> "${val}" </span> is Wrong! <br> The correct answer is <span class="correctAnswer"> "${correctAnswer}" </span>.`);
+    $('.js-feedback').html(`Your Answer: <span class="wrongAnswer"> "${chosen}" </span> is Wrong! <br> The correct answer is <span class="correctAnswer"> "${correctAnswer}" </span>.`);
     checkQuestionNumber();
 }
 
 function checkQuestionNumber(){
     if (questionNumber < 10 ){
-         $('.js-nextPageButton').on('click', renderNextQuestion)
+         $('.js-nextButton').on('click', renderNextQuestion)
         }
          else{
-            $('.js-nextPageButton').off('click');
-             $('.buttonContainerNextPage').html('<a class="finalButton" href="resultPage.html"><button>Final Score</button></a>');
+            $('.js-nextButton').on('click', renderResult);
         }
 }
 
+
 function renderNextQuestion(){
-    $('.js-nextPageButton').off('click');
+    $('.js-nextButton').off('click');
     $('.js-messageContainer').toggleClass('hidden');
     possibleAnswers = [];
     handleQuestionPage ();
 }
 
+function renderResult(){
+    $('.js-nextButton').off('click');
+    $('main').prepend(`<h1 class="resultHeading">Final Score : ${score}/10<h1>`);
+    checkScore(score);
+    }
+        
+    function checkScore(score){
+            let message;
+            let secondMessage;
+        if (score == 10){
+            message = 'Perfect Score! You watch out dental field, here you come!';
+            secondMessage = 'Try again for another perferct score.';
+        } 
+        else if (score < 10 && score >= 7){
+            message = 'Good job! You will be a dental termonology expert in no time!'
+            secondMessage = 'Try again for a perferct score.'
+        }
+        else if (score < 7 && score >= 4){
+            message = 'Not bad for a beginer. Keep practicing and you will be a dental termonology expert in no time!'
+            secondMessage = 'Try again for a perferct score.'
+        }
+        else if (score < 4){
+            message = 'Better study more! Keep practicing and you will be a dental termonology expert in no time!'
+            secondMessage = 'Try again for a perferct score.'
+        }
+        renderFinalMesage(message, secondMessage)
+    }
+    
+    function renderFinalMesage(message, secondMessage){
+        $('.js-feedback').html(`${message}</br>${secondMessage}`);
+        $('.buttonContainerNext').html('<a href="../../index.html"><button class="js-nextButton">Try Again</button></a>')
+    }
+
+
+
 function handleQuestionPage(){
     renderQuestionNumber();
     renderCurrentScore();
-    renderQuestion();
-    renderAnswers();
+    renderForm();
+    // renderAnswers();
 }
 
 $(handleQuestionPage);
