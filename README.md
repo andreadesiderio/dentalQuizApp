@@ -1,5 +1,6 @@
 # DentalQuizApp
 A simple quiz app about dental termonology.
+[SEE IT LIVE](https://andreadesiderio.github.io/dentalQuizApp/)
 
 
 ## Slack Used
@@ -8,7 +9,6 @@ A simple quiz app about dental termonology.
 + Javascript
 + Jquery
 ----
-[SEE IT LIVE](https://andreadesiderio.github.io/dentalQuizApp/)
 
 ## Problem
  Originally, I had the hero page, quiz page and final result page as three diffrent html files. This required too many reloads. I fixed this by using Javascript and Jquery to manipulate the DOM and go back to the begining without having to reload the page. This also created a smoother user experiance.
