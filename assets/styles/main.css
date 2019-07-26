@@ -30,7 +30,7 @@ button, label{
     cursor: pointer;
 }
 
-.buttonContainer .startButton, .buttonContainer .tryAgainButton{
+.buttonContainer .startButton{
     position: absolute; 
     top: 25%;
     left: 0;
@@ -40,7 +40,7 @@ button, label{
     text-align: center;
 }
 
-.startButton, .tryAgainButton{
+.startButton{
  width: 50%;
  background-color: rgba(254, 227, 193, .9);
  border: 3px solid rgb(81, 23, 35);
@@ -70,22 +70,6 @@ box-shadow: -5px 10px 20px 5px;
     transform: scale(0.9);
   }
 
-
-.finalMessageContainer{
-    position: absolute;
-    top: 20%;
-    left:0;
-    right: 0;
-    text-align: center;
-    background-attachment: fixed;
-    background: rgba(42, 38, 37, .8); 
-    font-weight: bold;
-    padding: 10px;
-    color:white; 
-    line-height: 30px;
-    font-size: 20px;
-    border: 1px solid rgb(254, 227, 193);
-}
 
 @media screen and (min-width: 600px){
     .finalMessageContainer{

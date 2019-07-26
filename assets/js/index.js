@@ -158,6 +158,7 @@ function checkIfTrue(chosen){
 
 function provideFeedBack(correctAnswer, chosen){
     //add image
+    $('.buttonContainerNext').html('<button class="js-nextButton">Next</button>');
     $('.js-messageContainer').toggleClass('hidden');
     correctAnswer == chosen ?
      sayItsCorrect(chosen)  : sayItsWrong(chosen, correctAnswer);
@@ -165,10 +166,10 @@ function provideFeedBack(correctAnswer, chosen){
      
 
 function sayItsCorrect(chosen){
+    score ++;
     questionNumber ++;
+    renderCurrentScore();
     $('.js-feedback').html(`Your Answer: <span class= "correctAnswer"> "${chosen}" </span> is Correct!`);
-   score ++;
-//    localStorage.setItem('score', score);
     checkQuestionNumber();
 }
 
@@ -180,7 +181,7 @@ function sayItsWrong(chosen, correctAnswer){
 
 function checkQuestionNumber(){
     if (questionNumber < 10 ){
-         $('.js-nextButton').on('click', renderNextQuestion)
+         $('.js-nextButton').on('click', renderNextQuestion);
         }
          else{
             $('.js-nextButton').on('click', renderResult);
@@ -201,40 +202,49 @@ function renderResult(){
     checkScore(score);
     }
         
-    function checkScore(score){
-            let message;
-            let secondMessage;
+function checkScore(score){
+    let message;
+    let secondMessage = 'Try again for a perferct score.';
         if (score == 10){
             message = 'Perfect Score! You watch out dental field, here you come!';
             secondMessage = 'Try again for another perferct score.';
         } 
         else if (score < 10 && score >= 7){
-            message = 'Good job! You will be a dental termonology expert in no time!'
-            secondMessage = 'Try again for a perferct score.'
+            message = 'Good job! You will be a dental termonology expert in no time!';
         }
         else if (score < 7 && score >= 4){
-            message = 'Not bad for a beginer. Keep practicing and you will be a dental termonology expert in no time!'
-            secondMessage = 'Try again for a perferct score.'
+            message = 'Not bad for a beginer. Keep practicing and you will be a dental termonology expert in no time!';
         }
         else if (score < 4){
-            message = 'Better study more! Keep practicing and you will be a dental termonology expert in no time!'
-            secondMessage = 'Try again for a perferct score.'
+            message = 'Better study more! Keep practicing and you will be a dental termonology expert in no time!';
         }
-        renderFinalMesage(message, secondMessage)
-    }
+    renderFinalMesage(message, secondMessage)
+}
     
-    function renderFinalMesage(message, secondMessage){
-        $('.js-feedback').html(`${message}</br>${secondMessage}`);
-        $('.buttonContainerNext').html('<a href="../../index.html"><button class="js-nextButton">Try Again</button></a>')
-    }
+function renderFinalMesage(message, secondMessage){
+    $('.js-feedback').html(`${message}</br>${secondMessage}`);
+    $('.buttonContainerNext').html('<button class="js-TryAgainButton">Try Again</button>');
+    $('.js-TryAgainButton').on('click', handleTryAgain);
+}
 
+function handleTryAgain(){
+    $('.messageContainer').toggleClass('hidden');
+    $('.js-TryAgainButton').off('click');
+    renewPage();
+}
 
+function renewPage(){
+    $('.resultHeading').remove();
+    questionNumber = 0 ;
+    possibleAnswers = [];
+    score = 0;
+    handleQuestionPage();
+}
 
 function handleQuestionPage(){
     renderQuestionNumber();
     renderCurrentScore();
     renderForm();
-    // renderAnswers();
 }
 
 $(handleQuestionPage);
