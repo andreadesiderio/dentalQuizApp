@@ -210,13 +210,13 @@ function checkScore(score){
             secondMessage = 'Try again for another perferct score.';
         } 
         else if (score < 10 && score >= 7){
-            message = 'Good job! You will be a dental termonology expert in no time!';
+            message = 'Good job! You will be a dental terminology expert in no time!';
         }
         else if (score < 7 && score >= 4){
-            message = 'Not bad for a beginer. Keep practicing and you will be a dental termonology expert in no time!';
+            message = 'Not bad for a beginer. Keep practicing and you will be a dental terminology expert in no time!';
         }
         else if (score < 4){
-            message = 'Better study more! Keep practicing and you will be a dental termonology expert in no time!';
+            message = 'Better study more! Keep practicing and you will be a dental terminology expert in no time!';
         }
     renderFinalMesage(message, secondMessage)
 }
@@ -235,7 +235,7 @@ function handleTryAgain(){
 
 function renewPage(){
     $('.resultHeading').remove();
-    questionNumber = 0 ;
+    questionNumber = 0;
     possibleAnswers = [];
     score = 0;
     handleQuestionPage();

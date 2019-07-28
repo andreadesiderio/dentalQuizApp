@@ -3,7 +3,7 @@
 }
 
  .heroImg{
-  background: rgb(22,50,54) url(../images/outsideDentalOffice3.jpg) 5px 60px no-repeat ; 
+  background: rgb(22,50,54) url(../images/outsideDentalOffice3-min.jpg) 5px 60px no-repeat ; 
   background-size: cover;
   overflow: scroll;
 } 
@@ -84,7 +84,7 @@ box-shadow: -5px 10px 20px 5px;
 
 @media screen and (min-width: 1000px){
      body{
-    background: rgb(22,50,54) url(../images/outsideDentalOffice3.jpg) 50% 60px no-repeat ; 
+    background: rgb(22,50,54) url(../images/outsideDentalOffice3-min.jpg) 50% 60px no-repeat ; 
     background-size: 80%;
     }
     h1{
