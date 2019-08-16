@@ -3,7 +3,7 @@ A simple quiz app about dental terminology.
 [SEE IT LIVE](https://andreadesiderio.github.io/dentalQuizApp/)
 
 
-## Slack Used
+## Stack Used
 + Html
 + Css
 + Javascript
