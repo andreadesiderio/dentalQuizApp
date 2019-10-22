@@ -22,12 +22,12 @@ A simple quiz app about dental termonology.
 
 
 ### Quiz Page
-<img src="screenshots/Annotation 2019-07-24 194056.png" alt="hero page">
+<img src="screenshots/Annotation 2019-07-24 194056.png" alt="quiz page">
 
 
 ### Feedback
-<img src="screenshots/Annotation 2019-07-24 194633.png" alt="hero page">
+<img src="screenshots/Annotation 2019-07-24 194633.png" alt="feedback">
 
 
 ### Final Result
-<img src="screenshots/Annotation 2019-07-24 194436.png" alt="hero page">
+<img src="screenshots/Annotation 2019-07-24 194436.png" alt="final-result page">
